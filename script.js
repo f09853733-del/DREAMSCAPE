@@ -225,3 +225,28 @@ const year = $("#year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+document.querySelectorAll("img[data-fallback]").forEach((img) => {
+  let fallbackTried = false;
+
+  img.addEventListener("error", () => {
+    if (!fallbackTried) {
+      fallbackTried = true;
+      img.src = img.dataset.fallback;
+    } else {
+      img.style.visibility = "hidden";
+
+      const container = img.closest(".image-wrap") || img.parentElement;
+
+      if (container) {
+        container.style.background =
+          "linear-gradient(135deg, #15152f, #704b91, #d18db8)";
+      }
+    }
+  });
+
+  if (img.complete && img.naturalWidth === 0) {
+    img.dispatchEvent(new Event("error"));
+  }
+});
+
