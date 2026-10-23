@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d24">
+  <meta name="description" content="Dreamscape — a magical gallery of imaginary worlds, floating islands and enchanted landscapes.">
+  <title>DREAMSCAPE — Enter the Impossible</title>
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader-symbol">✧</div>
+    <p>OPENING YOUR DREAM...</p>
+  </div>
+
+  <div class="stars" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Dreamscape home">
+      <span class="brand-mark">✧</span>
+      <span class="brand-name">DREAMSCAPE</span>
+      <span class="brand-sub">A MUSEUM OF DREAMS</span>
+    </a>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="nav-link active" href="#home"><span>⌂</span> Home</a>
+      <a class="nav-link" href="#gallery"><span>✧</span> Gallery</a>
+      <a class="nav-link" href="#about"><span>☾</span> About</a>
+      <a class="nav-link" href="#contact"><span>✉</span> Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="tiny-orbit">✦</div>
+      <p>Dream big.<br>Explore more.<br>Be you.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/" aria-label="Instagram">ig</a>
+        <a href="https://www.pinterest.com/" aria-label="Pinterest">p</a>
+        <a href="#contact" aria-label="Contact">↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" id="home">
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2200&q=90"
+        data-fallback="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85"
+        alt="Dreamlike cosmic landscape beneath a magical sky"
+        fetchpriority="high"
+      >
+
+      <div class="hero-overlay"></div>
+      <div class="hero-cloud cloud-one"></div>
+      <div class="hero-cloud cloud-two"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow"><span>✧</span> STEP INTO A WORLD OF WONDER <span>✧</span></p>
+        <h1>Dreams<br>Come to <em>Life</em></h1>
+        <p class="hero-description">
+          Explore a magical world of floating islands,
+          ethereal landscapes and endless imagination.
+        </p>
+        <a class="primary-button" href="#gallery">
+          Explore Gallery <span>↗</span>
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <a href="#gallery" class="scroll-cue">
+          <span class="scroll-icon">↓</span>
+          <span>SCROLL TO DISCOVER</span>
+        </a>
+        <span class="hero-index">01 <span>—</span> 04</span>
+      </div>
+
+      <div class="floating-spark spark-one">✦</div>
+      <div class="floating-spark spark-two">✧</div>
+      <div class="floating-spark spark-three">✧</div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">OUR IMAGINARY UNIVERSE</p>
+          <h2>Featured <em>Dreams</em></h2>
+        </div>
+        <p class="heading-note">Every picture tells a different dream. ✧</p>
+      </div>
+
+      <div class="filters reveal" role="group" aria-label="Filter gallery">
+        <button class="filter active" data-filter="all">All Dreams</button>
+        <button class="filter" data-filter="fantasy">Fantasy</button>
+        <button class="filter" data-filter="landscape">Landscapes</button>
+        <button class="filter" data-filter="architecture">Architecture</button>
+        <button class="filter" data-filter="nature">Nature</button>
+      </div>
+
+      <div class="dream-grid">
+        <article class="dream-card dream-large reveal" data-category="fantasy">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1100&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1100&q=85"
+                 alt="A mysterious fantasy landscape" loading="lazy">
+            <span class="card-number">01</span>
+            <button class="favorite" aria-label="Add Floating Kingdom to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ FANTASY WORLD</span>
+              <h3>Floating Kingdom</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="architecture">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=85"
+                 alt="Dreamlike mountains under a starry sky" loading="lazy">
+            <span class="card-number">02</span>
+            <button class="favorite" aria-label="Add Celestial Palace to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ ARCHITECTURE</span>
+              <h3>Celestial Palace</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="landscape">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+                 alt="A peaceful mountain lake in a magical landscape" loading="lazy">
+            <span class="card-number">03</span>
+            <button class="favorite" aria-label="Add Cloud Valley to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ LANDSCAPE</span>
+              <h3>Cloud Valley</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="nature">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=85"
+                 alt="Sunlight entering a mysterious enchanted forest" loading="lazy">
+            <span class="card-number">04</span>
+            <button class="favorite" aria-label="Add Enchanted Forest to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ NATURE</span>
+              <h3>Enchanted Forest</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="fantasy">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=85"
+                 alt="A colorful nebula in deep space" loading="lazy">
+            <span class="card-number">05</span>
+            <button class="favorite" aria-label="Add Cosmic Dreams to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ COSMIC FANTASY</span>
+              <h3>Cosmic Dreams</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="landscape">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+                 alt="Majestic mountain peaks above the clouds" loading="lazy">
+            <span class="card-number">06</span>
+            <button class="favorite" aria-label="Add Beyond the Clouds to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ LANDSCAPE</span>
+              <h3>Beyond the Clouds</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="architecture">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=85"
+                 alt="A dramatic mountain peak under the stars" loading="lazy">
+            <span class="card-number">07</span>
+            <button class="favorite" aria-label="Add Moonlit Sanctuary to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ DREAM ARCHITECTURE</span>
+              <h3>Moonlit Sanctuary</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="dream-card reveal" data-category="nature">
+          <div class="image-wrap">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=85"
+                 data-fallback="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=800&q=85"
+                 alt="Delicate flowers in a dreamy garden" loading="lazy">
+            <span class="card-number">08</span>
+            <button class="favorite" aria-label="Add Fairy Garden to favorites" aria-pressed="false">♡</button>
+            <div class="card-caption">
+              <span>✧ NATURE</span>
+              <h3>Fairy Garden</h3>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="empty-message" hidden>No dreams in this category yet.</p>
+
+      <div class="gallery-end">
+        <span></span>
+        <p>MORE BEAUTY AWAITS</p>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="about-section reveal" id="about">
+      <div class="about-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="moon">☾</div>
+        <span class="about-star star-a">✦</span>
+        <span class="about-star star-b">✧</span>
+        <span class="about-star star-c">✧</span>
+        <div class="about-art-text">IMAGINE<br>WITHOUT LIMITS</div>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow">A NOTE FROM DREAMSCAPE</p>
+        <h2>Reality is lovely.<br><em>Imagination</em> is infinite.</h2>
+        <p>
+          We believe every great adventure begins with a little curiosity.
+          Dreamscape is a visual journey through impossible places,
+          enchanted worlds and the beauty of imagination.
+        </p>
+        <a class="text-link" href="#gallery">FIND YOUR NEXT DREAM ↗</a>
+      </div>
+    </section>
+
+    <section class="contact-section reveal" id="contact">
+      <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+      <h2>Keep a little <em>magic.</em></h2>
+      <p>Thank you for wandering through our imaginary world.</p>
+      <a href="#home" class="primary-button">Return to the Beginning ↑</a>
+    </section>
+
+    <footer>
+      <a class="footer-brand" href="#home">DREAMSCAPE <span>✧</span></a>
+      <p>Made for dreamers and curious minds.</p>
+      <span class="copyright">© <span id="year"></span> DREAMSCAPE STUDIO</span>
+    </footer>
+  </main>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+</body>
+</html>
