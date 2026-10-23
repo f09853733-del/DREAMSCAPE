@@ -250,3 +250,70 @@ document.querySelectorAll("img[data-fallback]").forEach((img) => {
   }
 });
 
+function makeDreamImage(index = 0) {
+  const palettes = [
+    ["#160f35", "#8055b5", "#f5b5e8"],
+    ["#102d45", "#477c9d", "#b7e6ed"],
+    ["#20143f", "#a35d91", "#ffc6a6"],
+    ["#102e36", "#398477", "#d1e9b0"]
+  ];
+
+  const colors = palettes[index % palettes.length];
+
+  const svg = `
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 900 600">
+    <defs>
+      <linearGradient id="sky" x2="0" y2="1">
+        <stop stop-color="${colors[0]}"/>
+        <stop offset="1" stop-color="${colors[1]}"/>
+      </linearGradient>
+      <radialGradient id="glow">
+        <stop stop-color="${colors[2]}" stop-opacity=".9"/>
+        <stop offset="1" stop-color="${colors[2]}" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="900" height="600" fill="url(#sky)"/>
+    <circle cx="650" cy="180" r="170" fill="url(#glow)"/>
+    <circle cx="650" cy="180" r="48"
+            fill="${colors[2]}" opacity=".9"/>
+    <g fill="#fff5ff" opacity=".85">
+      <circle cx="100" cy="90" r="3"/>
+      <circle cx="240" cy="180" r="2"/>
+      <circle cx="400" cy="80" r="3"/>
+      <circle cx="790" cy="90" r="2"/>
+      <circle cx="530" cy="250" r="2"/>
+      <circle cx="170" cy="300" r="2"/>
+      <circle cx="760" cy="350" r="3"/>
+    </g>
+    <path d="M0 430 L170 230 320 420 480 260
+             680 450 810 300 900 400 V600 H0Z"
+          fill="${colors[0]}" opacity=".85"/>
+    <path d="M0 490 Q180 360 350 480
+             T700 460 T900 430 V600 H0Z"
+          fill="${colors[1]}"/>
+    <path d="M0 540 Q200 460 400 535
+             T900 510 V600 H0Z"
+          fill="${colors[0]}" opacity=".75"/>
+  </svg>`;
+
+  return "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(svg);
+}
+
+document.querySelectorAll(".hero-image, .image-wrap img")
+  .forEach((img, index) => {
+    img.addEventListener("error", () => {
+      if (img.dataset.dreamFallback) return;
+
+      img.dataset.dreamFallback = "true";
+      img.src = makeDreamImage(index);
+    });
+
+    if (img.complete && img.naturalWidth === 0) {
+      img.src = makeDreamImage(index);
+      img.dataset.dreamFallback = "true";
+    }
+  });
+
+
