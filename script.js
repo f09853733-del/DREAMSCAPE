@@ -1,4 +1,17 @@
 
+const $ = (selector, parent = document) =>
+  parent.querySelector(selector);
+
+const $$ = (selector, parent = document) =>
+  [...parent.querySelectorAll(selector)];
+
+function hideDreamLoader() {
+  document.querySelector("#loader")?.classList.add("done");
+}
+
+window.addEventListener("load", hideDreamLoader);
+setTimeout(hideDreamLoader, 2000);
+
 /* DREAMSCAPE — offline image fallback */
 function makeDreamImage(index) {
   const palettes = [
